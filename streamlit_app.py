@@ -21,22 +21,6 @@ st.markdown("""
 """)
 
 # --- Data Dummy (Ganti dengan data dari SQL Anda) ---
-curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent" \
-  -H 'Content-Type: application/json' \
-  -H 'X-goog-api-key: AIzaSyC71s3vAu1r28bS2tBW24ybibTIZNmh3qo' \
-  -X POST \
-  -d '{
-    "contents": [
-      {
-        "parts": [
-          {
-            "text": "Explain how AI works in a few words"
-          }
-        ]
-      }
-    ]
-  }'
-
 # DataFrame ini berfungsi sebagai pengganti data dari database SQL
 data_kecamatan = {
     'name': ["Samalanga", "Sp. Mamplam", "Pandrah", "Jeunieb", "Peulimbang", "Peudada", "Juli", "Jeumpa", "Kota Juang", "Kuala", "Jangka", "Peusangan", "Peusangan Selatan", "Peusangan Sb Krueng", "Makmur", "Gandapura", "Kuta Blang"],
@@ -56,7 +40,7 @@ df = pd.DataFrame(data_kecamatan)
 
 # --- Konfigurasi Gemini API (Ganti dengan kunci API Anda) ---
 # Anda harus mendapatkan API Key dari Google AI Studio dan memasangnya di sini.
-API_KEY = "GANTI_DENGAN_API_KEY_ANDA"
+API_KEY = "AIzaSyC71s3vAu1r28bS2tBW24ybibTIZNmh3qo"
 try:
     configure(api_key=API_KEY)
     model = GenerativeModel("gemini-2.5-flash-preview-05-20")
